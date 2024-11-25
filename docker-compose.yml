@@ -1,0 +1,23 @@
+services:
+  app:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      DATABASE_URL: 'mysql://bd-user-energy:energy1234@mysql:3306/bd_energy'
+    depends_on:
+      - mysql
+
+
+  mysql:
+    container_name: energy-mysql
+    image: mysql:8.0.39
+    environment:
+      MYSQL_ROOT_PASSWORD: "energy1234"
+      MYSQL_DATABASE: "bd_energy"
+      MYSQL_USER: "bd-user-energy"
+      MYSQL_PASSWORD: "energy1234"
+    ports:
+      - '3306:3306'  # A porta 3306 está exposta para o host
+
+
