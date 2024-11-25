@@ -80,7 +80,7 @@ GET /energy
 
 URL: http://localhost:3003/energy/1
 
-PUT /tasks/:id
+PUT /energy/:id
 
 
 ## 8. Tecnologias Utilizadas
